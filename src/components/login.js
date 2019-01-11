@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { Row, Col, Container} from "reactstrap";
-import { createBrowserHistory } from 'history';
 import { Redirect } from 'react-router-dom';
-
-const history = createBrowserHistory();
 
 // firebase.initializeApp({
 //     apiKey: "AIzaSyDLoqcbTDMFuurtAyDgVEKZ6qwo0j0Osjk",
@@ -52,8 +49,7 @@ export default class Login extends Component {
                 <Container>
                     <Row>
                         <Col sm="12" md={{ size: 6, offset: 5 }} style={{color: "white"}}>You're logged in</Col>
-                        {history.push("../")}
-                        <Redirect to="" />
+                        <Redirect to="/" />
                     </Row>
                 </Container>
             )

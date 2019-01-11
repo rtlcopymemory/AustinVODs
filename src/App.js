@@ -13,17 +13,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-      firebase.auth().onAuthStateChanged((user) => {
-          if (user != null) {
-              this.setState({
-                  isLogged: true
-              });
-          } else {
-              this.setState({
-                  isLogged: false
-              });
-          }
-        });
+    var path = window.location.pathname + window.location.hash;
+    if (path.includes("/AustinVODs#/AustinVODs#/")) {
+        window.location.replace("/AustinVODs");
+    }
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user != null) {
+            this.setState({
+                isLogged: true
+            });
+        } else {
+            this.setState({
+                isLogged: false
+            });
+        }
+      });
   }
 
   render() {
