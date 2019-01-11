@@ -12,7 +12,7 @@ import Login from './components/login';
 ReactDOM.render(
     <div style={{backgroundColor: "#333333"}}>
         <NavThing />
-        <HashRouter basename="/">
+        <HashRouter basename="/AustinVODs#">
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/login" component={Login} />

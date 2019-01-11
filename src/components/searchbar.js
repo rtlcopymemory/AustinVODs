@@ -3,7 +3,7 @@ import { InputGroup,
         InputGroupAddon,
         Input,
         Button } from "reactstrap";
-import firebase from "firebase";
+//import firebase from "firebase";
 
 export default class SearchBar extends Component {
     render() {

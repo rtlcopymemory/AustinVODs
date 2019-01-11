@@ -6,11 +6,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    NavLink} from 'reactstrap';
 import firebase from "firebase";
 //import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
@@ -62,7 +58,7 @@ export default class NavThing extends Component {
       return (
         <div>
           <Navbar color="dark" dark expand="md">
-            <NavbarBrand href="/">AustinVODs</NavbarBrand>
+            <NavbarBrand href="/AustinVODs">AustinVODs</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
