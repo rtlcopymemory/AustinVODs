@@ -43,19 +43,26 @@ class Results extends Component {
                 });
             }
         )
+        if (this.state.data[0] === undefined) {
+            
+        }
     }
 
     render() {
         return (
-            <Container>
-                <Row style={{paddingTop: "10px", color: 'white'}}>
-                    {
-                        this.state.isLoaded ?
-                        (<MatchContainer p1={this.state.data[0][0]} p2={this.state.data[0][3]} link={this.state.data[0][6]}/>)
+            <Container style={{color: 'white'}} >
+                {
+                    this.state.isLoaded ? 
+                    //(<MatchContainer p1={this.state.data[0][0]} p2={this.state.data[0][3]} link={this.state.data[0][6]}/>)
+                        (this.state.data[0] === undefined) ?
+                        (<Col>No results</Col>)
                         :
-                        (<Col>Loading...</Col>)
-                    }
-                </Row>
+                        this.state.data.map((juice) => {
+                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} />)
+                        })
+                    :
+                    (<Col>Loading...</Col>)
+                }
             </Container>
         );
     }
