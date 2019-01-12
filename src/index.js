@@ -8,14 +8,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavThing from './components/navbar';
 import Login from './components/login';
+import Results from './components/results';
 
 ReactDOM.render(
     <div style={{backgroundColor: "#333333"}}>
         <NavThing />
-        <HashRouter basename="/AustinVODs#">
+        <HashRouter>
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/login" component={Login} />
+                <Route path="/results/:name" component={Results} />
             </Switch>
         </HashRouter>
     </div>
