@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/AustinVODs/precache-manifest.3cb1c2b7be9f548efa923c5db41ecdab.js"
+  "/AustinVODs/precache-manifest.a9bb2e4e7f846b75a14f33d06ec2fe86.js"
 );
 
 workbox.clientsClaim();
