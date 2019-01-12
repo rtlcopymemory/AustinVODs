@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     var path = window.location.pathname + window.location.hash;
-    if (path.includes("/AustinVODs#/AustinVODs#/")) {
+    if (path.includes("/AustinVODs#/AustinVODs#/") || path.includes("AustinVODs/#/AustinVODs#/")) {
         window.location.replace("/AustinVODs");
     }
     firebase.auth().onAuthStateChanged((user) => {
