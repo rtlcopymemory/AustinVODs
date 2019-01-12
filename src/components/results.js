@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Row,
-         Col,
+import { Col,
          Container } from "reactstrap";
 import { withRouter } from 'react-router-dom';
 //API: https://script.google.com/macros/s/AKfycbxplAP3legxV6uzKfRu7fVyQfgkJ9OUvzoVm3zTe-qS5P2PIQ/exec?query=<search/pr>&player=<STRING>
@@ -57,8 +56,8 @@ class Results extends Component {
                         (this.state.data[0] === undefined) ?
                         (<Col>No results</Col>)
                         :
-                        this.state.data.map((juice) => {
-                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} />)
+                        this.state.data.map((juice, index) => {
+                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} />)
                         })
                     :
                     (<Col>Loading...</Col>)

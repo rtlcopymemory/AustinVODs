@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { Row,
          Col } from "reactstrap";
-import { withRouter } from 'react-router-dom';
 
 export default class MatchContainer extends Component {
     //props: p1, p2, link, ch1, ch2
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        var color = "#2D2D2D";
+        if (this.props.index % 2 === 0) {
+            color = "#303030";
+        }
+
         this.state = {
             ID: "",
-            imgURL: ""
+            imgURL: "",
+            bgcolor: color
         }
     }
 
@@ -22,7 +27,7 @@ export default class MatchContainer extends Component {
 
     render() {
         return(
-            <Row fluid style={{padding: "20px", color: 'white'}}>
+            <Row fluid style={{padding: "20px", color: 'white', backgroundColor: this.state.bgcolor}}>
                 <Col sm="12" md="6" style={{textAlign: "center"}} >
                     {this.props.p1} vs {this.props.p2}
                     <hr style={{borderColor: "purple", backgroundColor: "purple"}}/>
