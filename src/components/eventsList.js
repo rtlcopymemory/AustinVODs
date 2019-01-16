@@ -44,18 +44,19 @@ export default class EventsList extends Component {
             <div style={{paddingTop: "20px", textAlign: 'center', color: 'white'}}>
                 {
                     this.state.isLoaded ?
-                        (<p>{this.state.data.map((event, index) => {
-                            return (<Link id={index} to={"/event/" + event} onMouseOver={this.onHover} onMouseOut={this.onOut} style={{textDecoration: 'none'}}><div style={{textAlign: 'center',
+                        (<div>{this.state.data.map((event, index) => {
+                            return (<div><Link id={index} to={"/event/" + event} onMouseOver={this.onHover} onMouseOut={this.onOut} style={{textDecoration: 'none'}}><div style={{
+                                                textAlign: 'center',
                                                 padding: '5px',
                                                 border: '2px solid #4d5256',
                                                 borderRadius: '25px',
                                                 display: 'inline-block',
-                                                width: '35em',
+                                                width: '30vmax',
                                                 transform: 'translateY(' + (5 * index) + 'px)',
                                                 backgroundColor: '#4d5256'
-                                            }} id={event}>{event}</div></Link>
+                                            }} id={event}>{event}</div></Link><br /></div>
                             );
-                        })}</p>)
+                        })}</div>)
                     :
                         (<p>Loading...</p>)
                 }
