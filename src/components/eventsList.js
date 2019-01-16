@@ -42,6 +42,7 @@ export default class EventsList extends Component {
     render() {
         return (
             <div style={{paddingTop: "20px", textAlign: 'center', color: 'white'}}>
+            <div>Events:</div>
                 {
                     this.state.isLoaded ?
                         (<div>{this.state.data.map((event, index) => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col,
+         Row,
          Container } from "reactstrap";
 import { withRouter } from 'react-router-dom';
 //API: https://script.google.com/macros/s/AKfycbxplAP3legxV6uzKfRu7fVyQfgkJ9OUvzoVm3zTe-qS5P2PIQ/exec?query=<search/pr>&player=<STRING>
