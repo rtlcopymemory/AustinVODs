@@ -22,6 +22,10 @@ class Results extends Component {
         this.getResponse();
     }
 
+    componentDidUpdate() {
+        this.getResponse();
+    }
+
     getResponse() {
         fetch(myAPI + ("?query=search&player=" + this.props.match.params.name))
         .then(res => res.json())
