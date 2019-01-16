@@ -30,7 +30,7 @@ export default class MatchContainer extends Component {
         return(
             <Row fluid style={{padding: "20px", color: 'white', backgroundColor: this.state.bgcolor}}>
                 <Col sm="12" md="6" style={{textAlign: "center"}} >
-                    {this.props.p1} vs {this.props.p2}
+                    <Link to={"/results/" + this.props.p1}>{this.props.p1}</Link> vs <Link to={"/results/" + this.props.p2}>{this.props.p2}</Link>
                     <hr style={{borderColor: "purple", backgroundColor: "purple"}}/>
                     {this.props.ch1} vs {this.props.ch2}
                     <hr style={{borderColor: "purple", backgroundColor: "purple"}}/>
