@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Row,
          Col } from "reactstrap";
 
@@ -32,6 +33,8 @@ export default class MatchContainer extends Component {
                     {this.props.p1} vs {this.props.p2}
                     <hr style={{borderColor: "purple", backgroundColor: "purple"}}/>
                     {this.props.ch1} vs {this.props.ch2}
+                    <hr style={{borderColor: "purple", backgroundColor: "purple"}}/>
+                    <Link to={"/event/" + this.props.event} style={{textDecoration: 'underline'}}>{this.props.event}</Link>
                 </Col>
                 <Col sm="12" md="3" style={{textAlign: "center"}}>
                     <a href={this.props.link}><img alt="Thumbnail" src={this.state.imgURL} height="160" width="200" /></a>

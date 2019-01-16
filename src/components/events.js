@@ -9,7 +9,7 @@ import MatchContainer from './matchContainer';
 
 const myAPI = "https://script.google.com/macros/s/AKfycbxplAP3legxV6uzKfRu7fVyQfgkJ9OUvzoVm3zTe-qS5P2PIQ/exec";
 
-class Results extends Component {
+class Events extends Component {
     constructor() {
         super();
         this.state = {
@@ -23,7 +23,7 @@ class Results extends Component {
     }
 
     getResponse() {
-        fetch(myAPI + ("?query=search&player=" + this.props.match.params.name))
+        fetch(myAPI + ("?query=list&name=" + this.props.match.params.evName))
         .then(res => res.json())
         .then(
             (result) => {
@@ -67,4 +67,4 @@ class Results extends Component {
     }
 }
 
-export default withRouter(Results);
+export default withRouter(Events);

@@ -3,6 +3,7 @@ import firebase from "firebase";
 import { Container, Row, Col } from "reactstrap";
 
 import SearchBar from "./components/searchbar";
+import EventsList from './components/eventsList';
 
 class App extends Component {
   constructor() {
@@ -36,6 +37,7 @@ class App extends Component {
         <Row>
         <Col sm="12" md={{ size: 6, offset: 3 }}><SearchBar /></Col>
         </Row>
+        <EventsList />
       </Container>
     );
   }
