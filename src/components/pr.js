@@ -9,7 +9,7 @@ import MatchContainer from './matchContainer';
 
 const myAPI = "https://script.google.com/macros/s/AKfycbxplAP3legxV6uzKfRu7fVyQfgkJ9OUvzoVm3zTe-qS5P2PIQ/exec";
 
-class Events extends Component {
+class Results extends Component {
     constructor() {
         super();
         this.state = {
@@ -22,8 +22,12 @@ class Events extends Component {
         this.getResponse();
     }
 
+    componentDidUpdate() {
+        this.getResponse();
+    }
+
     getResponse() {
-        fetch(myAPI + ("?query=list&name=" + this.props.match.params.evName))
+        fetch(myAPI + "?query=pr")
         .then(res => res.json())
         .then(
             (result) => {
@@ -67,4 +71,4 @@ class Events extends Component {
     }
 }
 
-export default withRouter(Events);
+export default withRouter(Results);

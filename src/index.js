@@ -7,9 +7,9 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavThing from './components/navbar';
-import Login from './components/login';
 import Results from './components/results';
 import Events from './components/events';
+import Pr from './components/pr';
 
 ReactDOM.render(
     <div style={{backgroundColor: "#333333"}}>
@@ -17,9 +17,9 @@ ReactDOM.render(
         <HashRouter>
             <Switch>
                 <Route exact path="/" component={App} />
-                <Route path="/login" component={Login} />
                 <Route path="/results/:name" component={Results} />
                 <Route path="/event/:evName" component={Events} />
+                <Route path="/pr" component={Pr} />
             </Switch>
         </HashRouter>
     </div>

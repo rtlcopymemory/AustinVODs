@@ -25,33 +25,10 @@ export default class NavThing extends Component {
       };
     }
 
-    state = { isSignedIn: false }
-    uiConfig = {
-      signInFlow: "popup",
-      signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID
-      ],
-      callbacks: {
-        signInSuccess: () => false
-      }
-    }
-
-    componentDidMount = () => {
-      firebase.auth().onAuthStateChanged(user => {
-        this.setState({ isSignedIn: !!user });
-        //console.log("user", user);
-        firebase.auth().currentUser.getIdToken().then(data => this.setState({theThing: data}))
-      });
-    }
-
     toggle() {
       this.setState({
         isOpen: !this.state.isOpen
       });
-    }
-
-    logOut() {
-      firebase.auth().signOut();
     }
     //Render Function --------------------------------------------------------------
     render() {
@@ -63,12 +40,7 @@ export default class NavThing extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  {this.state.isSignedIn ? 
-                  //("" + firebase.auth().currentUser.getIdToken().i)
-                  (<NavLink onClick={this.logOut}>{firebase.auth().currentUser.displayName}</NavLink>)
-                  :
-                  (<NavLink href="#/login">Login</NavLink>)
-                  }
+                  <NavLink href="AustinVODs#/pr">PR Games</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
