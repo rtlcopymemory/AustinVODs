@@ -40,7 +40,7 @@ export default class NavThing extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="AustinVODs#/pr">PR Games</NavLink>
+                  <NavLink href="#/pr">PR Games</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
