@@ -22,6 +22,7 @@ ReactDOM.render(
                 <Route path="/pr" component={Pr} />
             </Switch>
         </HashRouter>
+        <div className="footer">Made by <a href="https://github.com/StackWolfed">StackWolfed</a></div>
     </div>
     , document.getElementById('root')
 );

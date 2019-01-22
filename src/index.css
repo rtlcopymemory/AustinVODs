@@ -17,3 +17,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.cont {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 10px 20px 0 rgba(0, 0, 0, 0.40);
+}
+
+.eventList {
+  color: white;
+}
+
+.eventList:hover {
+  color: rgb(0, 209, 0);
+}
+
+.footer {
+  color: white;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 15px;
+  width: 100%;
+  background:rgb(44, 44, 44);
+  text-align: right;
+  font-size: 10px;
+}
