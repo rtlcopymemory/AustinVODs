@@ -30,6 +30,8 @@ export default class NavThing extends Component {
         isOpen: !this.state.isOpen
       });
     }
+
+
     //Render Function --------------------------------------------------------------
     render() {
       return (
