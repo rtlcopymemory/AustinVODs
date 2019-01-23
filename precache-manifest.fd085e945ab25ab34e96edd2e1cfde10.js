@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "078358e29a58a12b0cd3",
+    "revision": "37f0b29a70448aced833",
     "url": "/AustinVODs/static/css/main.9f47ac95.chunk.css"
   },
   {
-    "revision": "078358e29a58a12b0cd3",
-    "url": "/AustinVODs/static/js/main.078358e2.chunk.js"
+    "revision": "37f0b29a70448aced833",
+    "url": "/AustinVODs/static/js/main.37f0b29a.chunk.js"
   },
   {
     "revision": "05b4a1307240df501fd2",
@@ -169,7 +169,7 @@ self.__precacheManifest = [
   },
   {
     "revision": "aa830fc20359df0457c8249f3130b8c7",
-    "url": "/AustinVODs/static/media/mii_fighter.aa830fc2.png"
+    "url": "/AustinVODs/static/media/mii_brawler.aa830fc2.png"
   },
   {
     "revision": "aa830fc20359df0457c8249f3130b8c7",
@@ -300,7 +300,7 @@ self.__precacheManifest = [
     "url": "/AustinVODs/static/media/zero_suit_samus.cf8745de.png"
   },
   {
-    "revision": "d50eb6f9eaf12d35eb887192f223fa47",
+    "revision": "fcf9ab4c9bf29f7ec8a4299cc5a855bc",
     "url": "/AustinVODs/index.html"
   }
 ];
