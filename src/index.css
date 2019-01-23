@@ -33,11 +33,46 @@ code {
 .footer {
   color: white;
   position: fixed;
-  left: 0px;
+  right: 0px;
+  float: right;
   bottom: 0px;
   height: 15px;
-  width: 100%;
+  width: auto;
   background:rgb(44, 44, 44);
   text-align: right;
   font-size: 10px;
+}
+
+.containersMatch {
+  color: white;
+}
+
+.collapsible {
+  color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible a {
+  color: white;
+}
+
+.collapsible a:hover {
+  color: white;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  display: none;
+}
+
+.content.in {
+  display: block;
+  text-align: center;
 }

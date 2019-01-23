@@ -20,7 +20,6 @@ class SearchBar extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state.player);
         this.props.history.push('/results/' + this.state.player);
     }
 
