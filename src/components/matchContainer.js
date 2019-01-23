@@ -68,13 +68,21 @@ export default class MatchContainer extends Component {
                 <button className={"collapsible"} onClick={this.openCollapse} style={{backgroundColor: this.state.bgcolor}}>
                     <Row fluid>
                         <Col xs="3" className="containersMatch">
-                            <Link to={"/results/" + this.props.p1}><b>{this.props.p1}</b></Link> <img alt={this.state.char1[0]} src={files[("./" + this.state.char1[0].toLowerCase() + ".png")]} heigth="25" width="25"></img>
+                            <Link to={"/results/" + this.props.p1}><b>{this.props.p1}</b></Link> {
+                                this.state.char1.map( element => {
+                                    return (<img alt={element} src={files[("./" + element.toLowerCase() + ".png")]} heigth="25" width="25"></img>)
+                                })
+                            }
                         </Col>
                         <Col xs="1" className="containersMatch">
                             <span>vs</span>
                         </Col>
                         <Col xs="4" className="containersMatch">
-                            <Link to={"/results/" + this.props.p2}><b>{this.props.p2}</b></Link> <img alt={this.state.char2[0]} src={files[("./" + this.state.char2[0].toLowerCase() + ".png")]} heigth="25" width="25"></img>
+                            <Link to={"/results/" + this.props.p2}><b>{this.props.p2}</b></Link> {
+                                this.state.char2.map( element => {
+                                    return (<img alt={element} src={files[("./" + element.toLowerCase() + ".png")]} heigth="25" width="25"></img>)
+                                })
+                            }
                         </Col>
                         <Col xs="3" className="containersMatch">
                             <Link to={"/event/" + this.props.event}>{this.props.event}</Link>
