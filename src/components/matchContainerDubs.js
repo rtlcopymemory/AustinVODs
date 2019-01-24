@@ -26,15 +26,15 @@ export default class MatchContainerDubs extends Component {
             character1[i] = character1[i].trim().replace(/ /g, '_');
         }
         var character2 = this.props.p2t1ch.split('/');
-        for (let i = 0; i < character1.length; i++) {
+        for (let i = 0; i < character2.length; i++) {
             character2[i] = character2[i].trim().replace(/ /g, '_');
         }
         var character3 = this.props.p1t2ch.split('/');
-        for (let i = 0; i < character2.length; i++) {
+        for (let i = 0; i < character3.length; i++) {
             character3[i] = character3[i].trim().replace(/ /g, '_');
         }
         var character4 = this.props.p2t2ch.split('/');
-        for (let i = 0; i < character2.length; i++) {
+        for (let i = 0; i < character4.length; i++) {
             character4[i] = character4[i].trim().replace(/ /g, '_');
         }
 
