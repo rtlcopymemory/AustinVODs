@@ -79,14 +79,14 @@ export default class MatchContainerDubs extends Component {
                 <button className={"collapsible"} onClick={this.openCollapse} style={{backgroundColor: this.state.bgcolor}}>
                     <Row fluid>
                         <Col xs="3" className="containersMatch">
-                            <Link to={"/resultsDubs/" + this.props.p1t1}><b>{this.props.p1t1}</b></Link> {
-                                this.state.char1.map( element => {
+                            <Link onClick={this.updateChars} to={"/resultsDubs/" + this.props.p1t1}><b>{this.props.p1t1}</b></Link> {
+                                this.state.char1.map( (element, index) => {
                                     return (<img alt={element} src={files[("./" + element.toLowerCase() + ".png")]} heigth="25" width="25"></img>)
                                 })
                             }
                             <br/>
-                            <Link to={"/resultsDubs/" + this.props.p2t1}><b>{this.props.p2t1}</b></Link> {
-                                this.state.char2.map( element => {
+                            <Link onClick={this.updateChars} to={"/resultsDubs/" + this.props.p2t1}><b>{this.props.p2t1}</b></Link> {
+                                this.state.char2.map( (element, index) => {
                                     return (<img alt={element} src={files[("./" + element.toLowerCase() + ".png")]} heigth="25" width="25"></img>)
                                 })
                             }
@@ -95,20 +95,20 @@ export default class MatchContainerDubs extends Component {
                             <span>vs</span>
                         </Col>
                         <Col xs="4" className="containersMatch">
-                            <Link to={"/resultsDubs/" + this.props.p1t2}><b>{this.props.p1t2}</b></Link> {
-                                this.state.char3.map( element => {
+                            <Link onClick={this.updateChars} to={"/resultsDubs/" + this.props.p1t2}><b>{this.props.p1t2}</b></Link> {
+                                this.state.char3.map( (element, index) => {
                                     return (<img alt={element} src={files[("./" + element.toLowerCase() + ".png")]} heigth="25" width="25"></img>)
                                 })
                             }
                             <br/>
-                            <Link to={"/resultsDubs/" + this.props.p2t2}><b>{this.props.p2t2}</b></Link> {
-                                this.state.char4.map( element => {
+                            <Link onClick={this.updateChars} to={"/resultsDubs/" + this.props.p2t2}><b>{this.props.p2t2}</b></Link> {
+                                this.state.char4.map( (element, index) => {
                                     return (<img alt={element} src={files[("./" + element.toLowerCase() + ".png")]} heigth="25" width="25"></img>)
                                 })
                             }
                         </Col>
                         <Col xs="3" className="containersMatch">
-                            <Link to={"/eventDubs/" + this.props.event}>{this.props.event}</Link>
+                            <Link onClick={this.updateChars} to={"/eventDubs/" + this.props.event}>{this.props.event}</Link>
                         </Col>
                     </Row>
                 </button>

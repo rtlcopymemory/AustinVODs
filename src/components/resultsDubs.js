@@ -41,14 +41,11 @@ class Results extends Component {
             // exceptions from actual bugs in components.
             (error) => {
                 this.setState({
-                isLoaded: true,
-                error
+                    isLoaded: true,
+                    error
                 });
             }
         )
-        if (this.state.data[0] === undefined) {
-            
-        }
     }
 
     render() {
@@ -61,7 +58,7 @@ class Results extends Component {
                         (<Col>No results</Col>)
                         :
                         this.state.data.map((juice, index) => {
-                            return (<MatchContainerDubs p1t1={juice[0]} p2t1={juice[1]} p1t1ch={juice[4]} p2t1ch={juice[5]} p1t2={juice[6]} p2t2={juice[7]} p1t2ch={juice[10]} p2t2ch={juice[11]} link={juice[12]} event={juice[13]} index={index} />)
+                            return (<MatchContainerDubs key={juice[0] + juice[6]} p1t1={juice[0]} p2t1={juice[1]} p1t1ch={juice[4]} p2t1ch={juice[5]} p1t2={juice[6]} p2t2={juice[7]} p1t2ch={juice[10]} p2t2ch={juice[11]} link={juice[12]} event={juice[13]} index={index} />)
                         })
                     :
                     (<Col>Loading...</Col>)

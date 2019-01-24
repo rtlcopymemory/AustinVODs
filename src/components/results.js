@@ -61,7 +61,7 @@ class Results extends Component {
                         (<Col>No results</Col>)
                         :
                         this.state.data.map((juice, index) => {
-                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} />)
+                            return (<MatchContainer key={juice[0] + juice[3]} p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} />)
                         })
                     :
                     (<Col>Loading...</Col>)
