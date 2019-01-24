@@ -10,6 +10,9 @@ import NavThing from './components/navbar';
 import Results from './components/results';
 import Events from './components/events';
 import Pr from './components/pr';
+import DubsMain from './components/dubsHome';
+import ResultsDubs from './components/resultsDubs';
+import EventsDubs from './components/eventsDubs'
 
 ReactDOM.render(
     <div style={{backgroundColor: "#333333"}}>
@@ -20,6 +23,9 @@ ReactDOM.render(
                 <Route path="/results/:name" component={Results} />
                 <Route path="/event/:evName" component={Events} />
                 <Route path="/pr" component={Pr} />
+                <Route path="/dubs" component={DubsMain} />
+                <Route path="/resultsDubs/:name" component={ResultsDubs} />
+                <Route path="/eventDubs/:evName" component={EventsDubs} />
             </Switch>
         </HashRouter>
         <div className="footer">Made by <a href="https://github.com/StackWolfed">StackWolfed</a></div>
