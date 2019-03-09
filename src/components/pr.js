@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 //get the name from url: this.props.match.params.name
 
 import MatchContainer from './matchContainer';
+import InfiniteScroll from 'react-infinite-scroller';
 
 const myAPI = "https://script.google.com/macros/s/AKfycbxplAP3legxV6uzKfRu7fVyQfgkJ9OUvzoVm3zTe-qS5P2PIQ/exec";
 
@@ -19,22 +20,30 @@ class Results extends Component {
     }
 
     componentDidMount() {
-        this.getResponse();
+        this.setState({
+            data: []
+        });
+        this.getResponse(0);
     }
 
     componentDidUpdate() {
-        this.getResponse();
+        this.getResponse(0);
     }
 
-    getResponse() {
+    getResponse(start) {
         fetch(myAPI + "?query=pr")
         .then(res => res.json())
         .then(
             (result) => {
                 this.setState({
                     isLoaded: true,
-                    data: result.data
+                    data: result.data.map( (item, index) => {
+                        if (index < start+50) {
+                            return item;
+                        }
+                    })
                 });
+                console.log(this.state.data);
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -61,7 +70,10 @@ class Results extends Component {
                         (<Col>No results</Col>)
                         :
                         this.state.data.map((juice, index) => {
-                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} />)
+                            if (juice === undefined) {
+                                return;
+                            }
+                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} key={index} />)
                         })
                     :
                     (<Col>Loading...</Col>)

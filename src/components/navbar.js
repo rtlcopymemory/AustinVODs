@@ -7,13 +7,6 @@ import {
     Nav,
     NavItem,
     NavLink} from 'reactstrap';
-import firebase from "firebase";
-//import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-
-firebase.initializeApp({
-  apiKey: "AIzaSyCIPlwX5hVrpR42ETE1O7bwpQNNxMZB2mQ",
-  authDomain: "austinvods.firebaseapp.com"
-})
   
 export default class NavThing extends Component {
     constructor(props) {
