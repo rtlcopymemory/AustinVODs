@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 //get the name from url: this.props.match.params.name
 
 import MatchContainer from './matchContainer';
-import InfiniteScroll from 'react-infinite-scroller';
 
 const myAPI = "https://script.google.com/macros/s/AKfycbxplAP3legxV6uzKfRu7fVyQfgkJ9OUvzoVm3zTe-qS5P2PIQ/exec";
 
@@ -14,9 +13,12 @@ class Results extends Component {
     constructor() {
         super();
         this.state = {
-            data: []
+            data: [],
+            page: 1
         }
         this.getResponse.bind(this);
+        this.next50 = this.next50.bind(this);
+        this.refresh = this.refresh.bind(this);
     }
 
     componentDidMount() {
@@ -26,9 +28,9 @@ class Results extends Component {
         this.getResponse(0);
     }
 
-    componentDidUpdate() {
-        this.getResponse(0);
-    }
+    // componentDidUpdate() {
+    //     this.getResponse(0);
+    // }
 
     getResponse(start) {
         fetch(myAPI + "?query=pr")
@@ -38,12 +40,11 @@ class Results extends Component {
                 this.setState({
                     isLoaded: true,
                     data: result.data.map( (item, index) => {
-                        if (index < start+50) {
+                        if (index < start+50 && index >= start) {
                             return item;
-                        }
+                        } return undefined;
                     })
                 });
-                console.log(this.state.data);
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -60,20 +61,44 @@ class Results extends Component {
         }
     }
 
+    next50() {
+        this.getResponse(50*(this.state.page));
+        this.setState({
+            page: this.state.page+1
+        });
+    }
+
+    refresh() {
+        this.setState({
+            data: []
+        });
+        this.getResponse(50*(this.state.page));
+    }
+
     render() {
+        function isEmpty(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] !== undefined) return false;
+            }
+            return true;
+        }
         return (
             <Container style={{color: 'white'}} >
                 {
                     this.state.isLoaded ? 
                     //(<MatchContainer p1={this.state.data[0][0]} p2={this.state.data[0][3]} link={this.state.data[0][6]}/>)
-                        (this.state.data[0] === undefined) ?
+                    // This code was from before I started the algorythms class and I regret this SOOOOO MUCH
+                        (isEmpty(this.state.data)) ?
                         (<Col>No results</Col>)
                         :
                         this.state.data.map((juice, index) => {
-                            if (juice === undefined) {
-                                return;
+                            if (index === ((this.state.page * 50) + 1)) {
+                                return (<div onClick={this.next50} key={index} index={index} className="NextButton">Next</div>);
                             }
-                            return (<MatchContainer p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} key={index} />)
+                            if (juice === undefined) {
+                                return undefined;
+                            }
+                            return (<MatchContainer refresh={this.refresh} p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} key={index} />)
                         })
                     :
                     (<Col>Loading...</Col>)

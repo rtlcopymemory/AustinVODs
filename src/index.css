@@ -76,3 +76,10 @@ code {
   display: block;
   text-align: center;
 }
+
+.NextButton {
+  text-align: center;
+  padding: 18px;
+  background-color: #444;
+  cursor: pointer;
+}

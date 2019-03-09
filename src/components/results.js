@@ -16,18 +16,19 @@ class Results extends Component {
             data: []
         }
         this.getResponse.bind(this);
+        this.refresh = this.refresh.bind(this);
     }
 
     componentDidMount() {
         this.getResponse();
     }
 
-    componentDidUpdate() {
-        this.getResponse();
-    }
+    // componentDidUpdate() {
+    //     this.getResponse();
+    // }
 
-    getResponse() {
-        fetch(myAPI + ("?query=search&player=" + this.props.match.params.name))
+    getResponse(name) {
+        fetch(myAPI + ("?query=search&player=" + (name === undefined ? this.props.match.params.name : name)))
         .then(res => res.json())
         .then(
             (result) => {
@@ -51,7 +52,23 @@ class Results extends Component {
         }
     }
 
+    refresh(newName) {
+        this.setState({
+            data: [],
+            isLoaded: false
+        });
+        this.getResponse(newName);
+        console.log(this.state.data);
+    }
+
     render() {
+        if (this.state.data.length === 0) {
+            return (
+                <Container>
+                    <Col>Loading...</Col>
+                </Container>
+            );
+        }
         return (
             <Container style={{color: 'white'}} >
                 {
@@ -61,7 +78,7 @@ class Results extends Component {
                         (<Col>No results</Col>)
                         :
                         this.state.data.map((juice, index) => {
-                            return (<MatchContainer key={juice[0] + juice[3]} p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} />)
+                            return (<MatchContainer refresh={this.refresh} key={index} p1={juice[0]} p2={juice[3]} link={juice[6]} ch1={juice[2]} ch2={juice[5]} index={index} event={juice[7]} />)
                         })
                     :
                     (<Col>Loading...</Col>)
