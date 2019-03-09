@@ -46,7 +46,7 @@ export default class EventsList extends Component {
                 {
                     this.state.isLoaded ?
                         (<div>{this.state.data.map((event, index) => {
-                            return (<div><Link className="eventList" id={index} to={"/event/" + event} onMouseOver={this.onHover} onMouseOut={this.onOut} style={{textDecoration: 'none'}}><div style={{
+                            return (<div><Link className="eventList" key={index} id={index} to={"/event/" + event} onMouseOver={this.onHover} onMouseOut={this.onOut} style={{textDecoration: 'none'}}><div style={{
                                                 textAlign: 'center',
                                                 padding: '5px',
                                                 border: '2px solid #4d5256',
