@@ -28,7 +28,7 @@ ReactDOM.render(
                 <Route path="/eventDubs/:evName" component={EventsDubs} />
             </Switch>
         </HashRouter>
-        <div className="footer">Made by <a href="https://github.com/StackWolfed">StackWolfed</a></div>
+        <div className="footer">Maintened by: Gale, made by <a href="https://github.com/StackWolfed">StackWolfed</a></div>
     </div>
     , document.getElementById('root')
 );
