@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "ae3b992a3e49dddd26d5",
+    "revision": "7383b0d1b573daecb07d",
     "url": "/AustinVODs/static/css/main.50cb1c66.chunk.css"
   },
   {
-    "revision": "ae3b992a3e49dddd26d5",
-    "url": "/AustinVODs/static/js/main.ae3b992a.chunk.js"
+    "revision": "7383b0d1b573daecb07d",
+    "url": "/AustinVODs/static/js/main.7383b0d1.chunk.js"
   },
   {
-    "revision": "24b9da6a5fd10562d37a",
+    "revision": "4b330b13a5477352f64e",
     "url": "/AustinVODs/static/css/1.c6c6734f.chunk.css"
   },
   {
-    "revision": "24b9da6a5fd10562d37a",
-    "url": "/AustinVODs/static/js/1.24b9da6a.chunk.js"
+    "revision": "4b330b13a5477352f64e",
+    "url": "/AustinVODs/static/js/1.4b330b13.chunk.js"
   },
   {
     "revision": "af9be049d0e33d8766db",
@@ -110,6 +110,10 @@ self.__precacheManifest = [
   {
     "revision": "f2b2b33f53f488c81d3ea20945f3ac4d",
     "url": "/AustinVODs/static/media/jigglypuff.f2b2b33f.png"
+  },
+  {
+    "revision": "684a9e4040c4981f3d597d659f1bc4f4",
+    "url": "/AustinVODs/static/media/joker.684a9e40.png"
   },
   {
     "revision": "381da68c6eda71ad70dcd2b84d727bd9",
@@ -300,7 +304,7 @@ self.__precacheManifest = [
     "url": "/AustinVODs/static/media/zero_suit_samus.cf8745de.png"
   },
   {
-    "revision": "1f13528dd201cdfcb8ebf4c00651f859",
+    "revision": "b5409fa9e66bf72847af3b1c1101e772",
     "url": "/AustinVODs/index.html"
   }
 ];
